@@ -1,0 +1,40 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/moonshot/moonshot.io"
+        }
+//        maven {
+//            url uri(rootProject.file('repo'))
+//        }
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.1.4'
+        classpath 'com.moonshot.plugin:BitmapDetectorPlugin:0.0.7'
+
+        //下面两个包是用于上传的插件
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+    }
+}
+
+allprojects {
+    repositories {
+        maven {
+            url  "https://dl.bintray.com/moonshot/moonshot.io"
+        }
+//        maven {
+//            url uri(rootProject.file('repo'))
+//        }
+        google()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
